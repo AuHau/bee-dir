@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const fs = require('fs')
+const path = require('path')
+const project = path.join(__dirname, '../.tasegir.js')
+const dev = fs.existsSync(project)
+
+require(`../${dev ? 'src' : 'lib'}/index`).default.run()
+  .catch(require('@oclif/errors/handle'))
