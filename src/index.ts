@@ -43,6 +43,7 @@ Verification is performed using comparing the sizes of the files.`
     const { args, flags } = this.parse(BeeDirCommand)
     const dirPath = path.resolve(args.dir)
 
+    cli.action.start('Collecting')
     const collection = await this.buildCollection(dirPath, flags.recursive)
 
     // Makes the paths relative, only the first first match is removed
@@ -59,7 +60,7 @@ Verification is performed using comparing the sizes of the files.`
       this.exit(0)
     }
 
-    this.log(`Uploading ${totalFiles} files with total size ${Math.round(totalSize / 1024 / 1024 * 100) / 100} MB`)
+    cli.action.stop(`${totalFiles} files with total size ${Math.round(totalSize / 1024 / 1024 * 100) / 100} MB`)
     cli.action.start('Uploading')
     const reference = await Collection.upload(flags.bee, collection)
     cli.action.stop(reference)
