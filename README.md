@@ -18,6 +18,32 @@
 
 ## Usage
 
+```
+$ git clone https://github.com/AuHau/bee-dir.git
+$ cd bee-dir
+$ npm i
+$ ./start_bee_node.sh &
+$ npm start -- /path/to/directory
+```
+
+```
+Uploads specified directory to Swarm and after that verify the files were correctly uploaded.
+
+USAGE
+  $ bee-dir DIR
+
+ARGUMENTS
+  DIR  directory to upload
+
+OPTIONS
+  -b, --bee=bee    (required) [default: http://localhost:8080] URL pointing to running instance of Bee [env: BEE_URL]
+  -r, --recursive  Determines if nested directories should be uploaded as well
+  -v, --verify     After finishing uploading the files, all files are re-downloaded and verified
+
+DESCRIPTION
+  Verification is performed using comparing the sizes of the files.
+```
+
 ## Contribute
 
 There are some ways you can make this module better:
