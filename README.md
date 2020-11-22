@@ -18,6 +18,7 @@
 
 ## Usage
 
+As this package is not released to NPM, you have to clone the repo locally:
 ```
 $ git clone https://github.com/AuHau/bee-dir.git
 $ cd bee-dir
@@ -26,6 +27,7 @@ $ ./start_bee_node.sh &
 $ npm start -- /path/to/directory
 ```
 
+Help page that you get when run `npm start -- --help`:
 ```
 Uploads specified directory to Swarm and after that verify the files were correctly uploaded.
 
@@ -36,7 +38,7 @@ ARGUMENTS
   DIR  directory to upload
 
 OPTIONS
-  -b, --bee=bee    (required) [default: http://localhost:8080] URL pointing to running instance of Bee [env: BEE_URL]
+  -b, --bee=bee    [default: http://localhost:8080] URL pointing to running instance of Bee [env: BEE_URL]
   -r, --recursive  Determines if nested directories should be uploaded as well
   -v, --verify     After finishing uploading the files, all files are re-downloaded and verified
 
@@ -50,6 +52,11 @@ There are some ways you can make this module better:
 
 - Consult our [open issues](https://github.com/auhau/bee-dir/issues) and take on one of them
 - Help our tests reach 100% coverage!
+
+### Tests
+
+In order to run tests first startup Bee node with `./start_bee_node.sh` script (Docker required).
+Then run tests with `npm test`.
 
 ## License
 

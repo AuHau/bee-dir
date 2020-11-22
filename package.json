@@ -41,9 +41,7 @@
     "types-check": "tasegir types-check",
     "lint": "tasegir lint",
     "release": "tasegir release --no-build --no-docs --target=node",
-    "test": "npm run test:unit && npm run test:integration",
-    "test:integration": "tasegir test --target node --files ./test/integration/**/*.spec.ts --files ./test/integration/**/**/*.spec.ts",
-    "test:unit": "tasegir test --target node --files ./test/unit/*.spec.ts --files ./test/unit/**/*.spec.ts --files ./test/unit/**/**/*.spec.ts",
+    "test": "tasegir test --target node",
     "start": "tasegir run ./bin/run -- "
   },
   "dependencies": {

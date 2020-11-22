@@ -73,6 +73,8 @@ Verification is performed using comparing the sizes of the files.`
       }
       cli.action.stop()
     }
+
+    return reference
   }
 
   /**
